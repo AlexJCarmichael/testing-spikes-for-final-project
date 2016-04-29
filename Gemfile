@@ -47,6 +47,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'react-rails', '~> 1.7.0'
 gem "rails-erd"
 gem 'clearance'
 gem 'materialize-sass'
