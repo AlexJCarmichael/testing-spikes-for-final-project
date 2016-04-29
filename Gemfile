@@ -46,7 +46,7 @@ group :development do
   gem 'spring'
 end
 
-
+gem 'clearance'
 gem 'materialize-sass'
 gem 'faker'
 gem 'kaminari'
