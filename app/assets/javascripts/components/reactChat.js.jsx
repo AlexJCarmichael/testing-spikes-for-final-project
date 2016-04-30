@@ -7,10 +7,11 @@ var ReactChat = React.createClass({
 
   tick: function() {
     var that = this;
-    var url = document.URL;
+    var url = '/messages';
     $.getJSON(url, function(response){
+      console.log(response);
       that.setState({
-        messages: response.messages
+        messages: response
       })
     });
   },
@@ -26,15 +27,14 @@ var ReactChat = React.createClass({
   render: function() {
     return (
       <div>
-      {this.state.messages.map(function(comment){
-        return (
-          <MessageDisplay
-            key={message.id}
-            user_name={current_user.email}
-            text={message.text}
-            />
-        );
-      })}
+        {this.state.messages.map(function(message){
+          return (
+            <MessageDisplay
+              key={message.id}
+              text={message.text}
+              />
+          );
+        })}
       </div>
     );
   }

@@ -21,11 +21,10 @@ var MessagesSender = React.createClass({
     var that = this;
     $.ajax({
       method: "POST",
-      url: "/messages.json",
+      url: "/messages",
       data: {
-        comment: {
-          text: this.state.messageText,
-          user_id: this.current_user
+        message: {
+          text: this.state.messageText
         }
       }
     }).done(function(response) {

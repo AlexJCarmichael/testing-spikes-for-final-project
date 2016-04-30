@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Messages.all
+    @messages = Message.all
     respond_to do |format|
       format.html do
         @messages
@@ -38,8 +38,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.user_id =  session[:user_id]
+    @message = current_user.messages.build(message_params)
     if @message.save
       respond_to do |format|
         format.html do
@@ -61,6 +60,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:text)
+    params.require(:message).permit(:text, :user_id)
   end
 end
