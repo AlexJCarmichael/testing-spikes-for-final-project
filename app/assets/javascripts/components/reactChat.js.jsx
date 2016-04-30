@@ -8,6 +8,8 @@ var ReactChat = React.createClass({
   tick: function() {
     var that = this;
     var url = '/messages';
+    var $chatWindow = $('#chat-window');
+    $chatWindow[0].scrollTop = $chatWindow[0].scrollHeight;
     $.getJSON(url, function(response){
       console.log(response);
       that.setState({
