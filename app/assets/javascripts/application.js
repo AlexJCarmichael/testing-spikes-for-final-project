@@ -22,7 +22,9 @@
 
 var ready;
 ready = function() {
-  
+    $("#clicky-button").on("click", function () {
+        $("#collapse-me").toggleClass("collapse");
+    });
 };
 
 $(document).ready(ready);

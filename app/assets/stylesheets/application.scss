@@ -25,3 +25,15 @@
   height: 20em;
   overflow: auto;
 }
+
+h6 {
+  background-color: black;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.collapse {
+  display: none;
+}
