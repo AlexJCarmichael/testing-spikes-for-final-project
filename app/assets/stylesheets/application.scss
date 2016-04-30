@@ -18,5 +18,10 @@
 
 .chat-container {
   height: 25em;
-  overflow: scroll;
+  overflow: auto;
+}
+
+#chat-window {
+  height: 20em;
+  overflow: auto;
 }

@@ -8,13 +8,15 @@ var ReactChat = React.createClass({
   tick: function() {
     var that = this;
     var url = '/messages';
-    var $chatWindow = $('#chat-window');
-    $chatWindow[0].scrollTop = $chatWindow[0].scrollHeight;
+    var chatWindow = document.getElementById("chat-window");
+    var isScrolledToBottom = chatWindow.scrollHeight - chatWindow.clientHeight <= chatWindow.scrollTop + 5;
     $.getJSON(url, function(response){
       console.log(response);
       that.setState({
         messages: response
       })
+      if(isScrolledToBottom)
+        chatWindow.scrollTop = chatWindow.scrollHeight - chatWindow.clientHeight;
     });
   },
 
@@ -28,7 +30,7 @@ var ReactChat = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div id="chat-window">
         {this.state.messages.map(function(message){
           return (
             <MessageDisplay
