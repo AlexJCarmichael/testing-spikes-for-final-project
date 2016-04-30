@@ -12,8 +12,11 @@ var MessagesSender = React.createClass({
   },
 
   handleDown: function (event) {
-    if (event.keyCode === 13) {
-      this.handlePostMessage();
+    if (event.shiftKey && event.keyCode === 13) {
+        this.state.messageText + "\n"
+      if (event.keyCode === 13) {
+        this.handlePostMessage();
+      }
     }
   },
 
