@@ -1,4 +1,4 @@
-var CharHolder = React.createClass({
+var ReactChat = React.createClass({
   getInitialState: function () {
     return {
       messages: []
@@ -26,7 +26,7 @@ var CharHolder = React.createClass({
   render: function() {
     return (
       <div>
-      {this.state.comments.map(function(comment){
+      {this.state.messages.map(function(comment){
         return (
           <MessageDisplay
             key={message.id}

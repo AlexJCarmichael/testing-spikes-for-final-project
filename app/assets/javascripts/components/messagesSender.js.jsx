@@ -6,9 +6,15 @@ var MessagesSender = React.createClass({
   },
 
   handleChange: function (event) {
-    this.setState({
-      messageText: event.target.value
+      this.setState({
+        messageText: event.target.value
     });
+  },
+
+  handleDown: function (event) {
+    if (event.keyCode === 13) {
+      this.handlePostMessage();
+    }
   },
 
   handlePostMessage: function () {
@@ -19,7 +25,7 @@ var MessagesSender = React.createClass({
       data: {
         comment: {
           text: this.state.messageText,
-          user_id: this.current_user.id
+          user_id: this.current_user
         }
       }
     }).done(function(response) {
@@ -34,7 +40,8 @@ var MessagesSender = React.createClass({
       <div>
         <textarea row={40} cols={40}
                 placeholder="Send a message"
-                value{this.state.messageText}
+                value={this.state.messageText}
+                onKeyDown={this.handleDown}
                 onChange={this.handleChange}/>
       </div>
     );
