@@ -24,7 +24,7 @@ var MessagesSender = React.createClass({
       url: "/messages",
       data: {
         message: {
-          text: this.state.messageText
+          body: this.state.messageText
         }
       }
     }).done(function(response) {
