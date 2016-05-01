@@ -35,6 +35,11 @@
     cursor: pointer;
   }
 }
+.chat-position {
+  position: absolute;
+	bottom: 0;
+	right: 0;
+}
 
 .collapse {
   display: none;
