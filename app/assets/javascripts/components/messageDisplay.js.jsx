@@ -1,11 +1,11 @@
 var MessageDisplay = React.createClass({
   render: function(){
     return (
-      <div>
-      <strong>  {this.props.user_name}  </strong> |
-            <p>
+      <div className="row">
+      <strong className="col s3">  {this.props.user_name}  </strong>
+            <span className="col s9">
               {this.props.body}
-            </p>
+            </span>
       </div>
     );
   }
