@@ -18,6 +18,7 @@
 
 .chat-container {
   height: 25em;
+  width: 25em;
   overflow: auto;
 }
 
@@ -26,7 +27,8 @@
   overflow: auto;
 }
 
-h6 {
+.limiter {
+  width: 25em;
   background-color: black;
   color: white;
   &:hover {
